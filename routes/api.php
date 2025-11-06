@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\VendasController;
 use App\Models\Produtos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,4 +19,12 @@ Route::get('/clientes', [ClientesController::class, 'index']);
 Route::post('/clientes', [ClientesController::class, 'store']);
 Route::get('/clientes/{cliente}', [ClientesController::class, 'show']);
 Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy']);
+
+// rotas das vendas
+// rotas dos clientes
+Route::get('/vendas', [VendasController::class, 'index']);
+Route::post('/vendas', [VendasController::class, 'store']);
+Route::get('/vendas/{venda}', [VendasController::class, 'show']);
+Route::delete('/vendas/{venda}', [VendasController::class, 'destroy']);
+
 

@@ -14,4 +14,9 @@ class Produtos extends Model
         'categoria', 
         'valor_produto'
     ];
+
+    public function vendas()
+    {
+        return $this->hasMany(Vendas::class, 'produto_id');
+    }
 }

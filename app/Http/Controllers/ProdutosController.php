@@ -12,9 +12,9 @@ class ProdutosController extends Controller
 {
     use HttpResponses;
 
-    public function index(Request $request) {
-        return ProdutosResource::collection(Produtos::all());
-    }
+        public function index(Request $request) {
+            return ProdutosResource::collection(Produtos::all());
+        }
 
     
     public function store(Request $request) {

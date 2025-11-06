@@ -14,4 +14,9 @@ class Clientes extends Model
         'data_nascimento', 
         'ativo'
     ];
+
+    public function vendas()
+    {
+        return $this->hasMany(Vendas::class, 'cliente_id');
+    }
 }
