@@ -21,7 +21,6 @@ Route::get('/clientes/{cliente}', [ClientesController::class, 'show']);
 Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy']);
 
 // rotas das vendas
-// rotas dos clientes
 Route::get('/vendas', [VendasController::class, 'index']);
 Route::post('/vendas', [VendasController::class, 'store']);
 Route::get('/vendas/{venda}', [VendasController::class, 'show']);

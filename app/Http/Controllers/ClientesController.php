@@ -13,7 +13,8 @@ class ClientesController extends Controller
     use HttpResponses;
 
     public function index(Request $request) {
-        return ClientesResources::collection(Clientes::all());
+        // return ClientesResources::collection(Clientes::all());
+        return(new Clientes())->filter($request);
     }
 
     public function store(Request $request) {

@@ -13,7 +13,8 @@ class ProdutosController extends Controller
     use HttpResponses;
 
         public function index(Request $request) {
-            return ProdutosResource::collection(Produtos::all());
+            // return ProdutosResource::collection(Produtos::all());
+            return(new Produtos())->filter($request);
         }
 
     
