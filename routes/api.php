@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Route;
 
 
 // rotas dos produtos
-Route::get('/produtos', [ProdutosController::class, 'index'])->middleware('auth:sanctum');
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/produtos', [ProdutosController::class, 'index'])->middleware('ability:get-produtos');
+});
+
+
 Route::post('/produtos', [ProdutosController::class, 'store']);
 Route::get('/produtos/{produto}', [ProdutosController::class, 'show']);
 Route::delete('/produtos/{produto}', [ProdutosController::class, 'destroy']);

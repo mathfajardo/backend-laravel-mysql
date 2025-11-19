@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         if(Auth::attempt($request->only('email', 'password'))) {
             return $this->response('Autorizado', 200, [
-                'token' => $request->user()->createToken('user')->plainTextToken
+                'token' => $request->user()->createToken('user', ['get-produtos'])->plainTextToken
             ]);
         }
         return $this->response('Não autorizado', 403);
