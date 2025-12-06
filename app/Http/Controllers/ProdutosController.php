@@ -6,6 +6,7 @@ use App\Http\Resources\ProdutosResource;
 use App\Models\Produtos;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ProdutosController extends Controller
@@ -75,5 +76,17 @@ class ProdutosController extends Controller
             return $this->response("Produto deletado", 200);
         }
         return $this->response("Produto não deletado", 400);
+    }
+
+    public function produtosTotal() 
+    {
+        // retornadno o total de produtos cadastados
+        $produtos = DB::table('produtos')->count();
+
+        
+        // retornando a requisicao
+        return $this->response('Total de produtos', 200, ['total' => $produtos]);
+
+
     }
 }

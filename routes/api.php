@@ -17,13 +17,15 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/produtos', [ProdutosController::class, 'store']);
     Route::get('/produtos/{produto}', [ProdutosController::class, 'show']);
     Route::delete('/produtos/{produto}', [ProdutosController::class, 'destroy']);
-    Route::put('/produtos/{produto}', [ProdutosController::class, "update"]);
+    Route::put('/produtos/{produto}', [ProdutosController::class, 'update']);
+    Route::get('/produtosTotal', [ProdutosController::class, 'produtosTotal']);
 
     // rotas dos clientes
     Route::get('/clientes', [ClientesController::class, 'index']);
     Route::post('/clientes', [ClientesController::class, 'store']);
     Route::get('/clientes/{cliente}', [ClientesController::class, 'show']);
     Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy']);
+    Route::get('/clientesTotal', [ClientesController::class, 'clientesTotal']);
 
     // rotas das vendas
     Route::get('/vendas', [VendasController::class, 'index']);

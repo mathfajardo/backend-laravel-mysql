@@ -6,6 +6,7 @@ use App\Http\Resources\ClientesResources;
 use App\Models\Clientes;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class ClientesController extends Controller
@@ -48,5 +49,17 @@ class ClientesController extends Controller
             return $this->response("Cliente deletado", 200);
         }
         return $this->response("Erro ao deletar", 400);
+    }
+
+    public function clientesTotal() 
+    {
+        // retornadno o total de clientes cadastados
+        $clientes = DB::table('clientes')->count();
+
+        
+        // retornando a requisicao
+        return $this->response('Total de clientes', 200, ['total' => $clientes]);
+
+
     }
 }
