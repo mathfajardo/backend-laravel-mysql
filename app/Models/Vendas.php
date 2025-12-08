@@ -23,10 +23,10 @@ class Vendas extends Model
         $queryFilter = (new VendasFilter)->filter($request);
 
         if (empty($queryFilter)) {
-            return VendasResources::collection(Vendas::all());
+            return VendasResources::collection(Vendas::with('cliente', 'produto')->get());
         }
 
-        $data = Vendas::query();
+        $data = Vendas::with('cliente', 'produto');
 
         if (!empty($queryFilter['whereIn'])) {
             foreach ($queryFilter['whereIn'] as $value) {
