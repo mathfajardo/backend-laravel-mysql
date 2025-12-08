@@ -39,4 +39,14 @@ class VendasController extends Controller
         
         
     }
+
+    public function destroy(Vendas $venda) {
+        $deleted = $venda->delete();
+
+        if ($deleted) {
+            return $this->response("Venda deletada com sucesso", 200);
+        }
+
+        return $this->response("Não foi possível deletar", 400);
+    }
 }
