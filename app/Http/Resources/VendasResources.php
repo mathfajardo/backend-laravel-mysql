@@ -19,7 +19,7 @@ class VendasResources extends JsonResource
             'produto_id' => $this->produto_id,
             'cliente_id' => $this->cliente_id,
             'quantidade' => $this->quantidade,
-            'valor unitário' => $this->valor_unitario,
+            'valor_total' => $this->valor_total,
             'produto' => [
                 'nome_produto' => $this->produto->nome_produto,
                 'categoria' => $this->produto->categoria,
