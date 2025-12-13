@@ -48,3 +48,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 // rota dos users
 Route::post('/user', [UserController::class, 'store']);  
+
+Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::post('/produtos', [ProdutosController::class, 'store']);
+Route::delete('/produtos/{produto}', [ProdutosController::class, 'destroy']);
