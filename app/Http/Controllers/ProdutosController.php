@@ -34,7 +34,7 @@ class ProdutosController extends Controller
         $created = Produtos::create($validator->validated());
 
         if ($created) {
-            return $this->response('Produto adicionado com sucesso', 200, $created);
+            return $this->response('Produto adicionado com sucesso!!', 200, $created);
         }
         return $this->response('Produto não adicionado', 400);
     }
