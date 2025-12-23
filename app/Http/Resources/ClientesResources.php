@@ -18,7 +18,7 @@ class ClientesResources extends JsonResource
         return [
             'id' => $this->id,
             'nome_cliente' => $this->nome_cliente,
-            'data_nascimento' => Carbon::parse($this->data_nascimento)->format('d/m/Y'),
+            'data_nascimento' => $this->data_nascimento,//Carbon::parse($this->data_nascimento)->format('d/m/Y'),
             'ativo' => $this->ativo
         ];
     }
